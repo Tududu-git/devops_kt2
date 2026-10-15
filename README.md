@@ -18,7 +18,25 @@ docker run -d -p 8080:8080 -p 8081:8081 --name kt2 bookstore
 
 docker ps
 
+<img width="1514" height="85" alt="image" src="https://github.com/user-attachments/assets/0f6b46f6-a6e3-4426-b1ab-5aeaf88eb8ad" />
 
 
-<img width="1914" height="498" alt="image" src="https://github.com/user-attachments/assets/62902ca8-2723-4f96-9aba-3b71687d062c" />
+
+
+
+
+после всего этого проверяем работу api
+get запросы 
+curl.exe -X GET http://localhost:8080/bookstore/books/all
+
+curl.exe -X GET http://localhost:8080/bookstore/books/search/name/Название1
+
+curl.exe -X GET http://localhost:8080/bookstore/books/search/price/1000
+
+curl.exe -X GET http://localhost:8080/bookstore/books/search/author/Автор3
+
+<img width="1901" height="251" alt="image" src="https://github.com/user-attachments/assets/416b8497-d7a9-4d7d-aea1-3877c12773b9" />
+
+
+
 
