@@ -1,6 +1,7 @@
-<img width="1232" height="152" alt="image" src="https://github.com/user-attachments/assets/49ed8ba7-afe5-4ae8-aa29-969b93c29d7e" /># devops_kt2
-
+# devops_kt2
 перед запуском команд для докера убедитесь что вы находить в корневой дериктории проекта
+
+<img width="1232" height="152" alt="image" src="https://github.com/user-attachments/assets/49ed8ba7-afe5-4ae8-aa29-969b93c29d7e" />
 
 docker build -t bookstore .
 <img width="1116" height="99" alt="image" src="https://github.com/user-attachments/assets/62210099-8270-4054-9152-25898786e833" />
