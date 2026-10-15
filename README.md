@@ -16,6 +16,8 @@ docker run -d -p 8080:8080 -p 8081:8081 --name kt2 bookstore
 
 после этого проверьте работу контейнера
 
+docker ps
+
 
 
 <img width="1914" height="498" alt="image" src="https://github.com/user-attachments/assets/62902ca8-2723-4f96-9aba-3b71687d062c" />
