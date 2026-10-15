@@ -34,7 +34,7 @@ app.MapGet("/bookstore/books/search/name/{name}", (string name) =>
         }
     }
     if (a.Count == 0)
-        return Results.NotFound(new { message = $"книжки с названием {name} нету дружище" });
+        return Results.NotFound(new { message = $"книги с названием {name} нету" });
     return Results.Ok(a);
 });
 app.MapGet("/bookstore/books/search/price/{price}", (int price) =>
@@ -48,7 +48,7 @@ app.MapGet("/bookstore/books/search/price/{price}", (int price) =>
         }
     }
     if (a.Count == 0)
-        return Results.NotFound(new { message = $"книжки с ценой {price} нету дружище" });
+        return Results.NotFound(new { message = $"книги с ценой {price} нету" });
     return Results.Ok(a);
 });
 app.MapGet("/bookstore/books/search/author/{author}", (string author) =>
@@ -62,13 +62,20 @@ app.MapGet("/bookstore/books/search/author/{author}", (string author) =>
         }
     }
     if (a.Count == 0)
-        return Results.NotFound(new { message = $"книжки с автором {author} нету дружище" });
+        return Results.NotFound(new { message = $"книги с автором {author} нету" });
     return Results.Ok(a);
 });
 app.MapPost("/bookstore/books/add", (Book newBook) =>
 {
-    if (newBook.Name == null || newBook.Author == null || newBook.Price <= 0)
-        return Results.BadRequest(new { message = "бляяя чувак накосячил ты по страшному? json'то твой корявый" });
+    var answer = "";
+    if (newBook.Name == null)
+        answer += "\n название книги отсутствует";
+    if (newBook.Author == null)
+        answer += "\n автор книги отсутствует";
+    if (newBook.Price <= 0)
+        answer += "\n цена 0 или отрицательная";
+    if(answer != "")
+        return Results.BadRequest(new {message = answer});
     store.Add(newBook);
     return Results.Created($"/bookstore/books/search/name/{newBook.Name}", newBook);
 });
